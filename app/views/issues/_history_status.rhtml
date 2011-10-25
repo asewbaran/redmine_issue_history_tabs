@@ -1,0 +1,25 @@
+<div id="history_status">
+<table style="border-bottom:1px solid ##AAAAFF">
+<% for journal in journals %>
+  <div id="change-<%= journal.id %>" class="journal">
+    <% if journal.details.size > 0 %>
+	<tr>
+		<td>
+			<%= avatar(journal.user, :size => "18") %><%= journal.user %><br>
+			<%= journal.created_on %>
+		</td><td>
+			<ul>
+			<% for detail in journal.details %>
+			<li><%= show_detail(detail) %></li>
+			<% end %>
+			</ul>
+		</td>
+		<td>
+			<div style="float:right;"><%= link_to "##{journal.indice}", :anchor => "note-#{journal.indice}" %></div>
+		</td>
+	</tr>
+	<% end %>
+  </div>
+<% end %>
+</table>
+</div>
