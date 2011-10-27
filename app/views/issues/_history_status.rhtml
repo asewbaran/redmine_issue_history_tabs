@@ -4,7 +4,7 @@
   <div id="change-<%= journal.id %>" class="journal">
     <% if journal.details.size > 0 %>
 	<tr>
-		<td>
+		<td style="vertical-align:top">
 			<%= avatar(journal.user, :size => "18") %><%= journal.user %><br>
 			<%= journal.created_on %>
 		</td><td>
